@@ -1,5 +1,4 @@
 'use strict';
-
 // This file supports both iOS and Android
 
 // Stop bluebird going nuts because it can't find "self"
@@ -23,7 +22,7 @@ function promisify(func) {
   }
 }
 
-var _getRealPathFromURI = promisify(GRP ? GRP.getRealPathFromURI : (fileUri) => { return fileUri; });
+var _getRealPathFromURI = promisify(GRP ? GRP?.getRealPathFromURI : (fileUri) => { return fileUri; });
 
 var convertError = (err) => {
   if (err.isOperational && err.cause) {
